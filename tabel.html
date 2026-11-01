@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Forms, Tables & CSS Float</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* HTML FORMS */
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+
+        .options {
+            margin: 15px 0;
+            line-height: 2;
+        }
+
+        /* TABLE */
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* CSS FLOAT */
+
+        .animals {
+            display: flex;
+            gap: 20px;
+        }
+
+        .animal-card {
+            width: 50%;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 0;
+        }
+
+        .cat {
+            background-color: aquamarine;
+        }
+
+        .dog {
+            background-color: coral;
+        }
+
+        .animal-card img {
+            float: left;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 12px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+        }
+
+        .animal-card p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            clear: both;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 18px;
+            }
+
+            .animals {
+                flex-direction: column;
+            }
+
+            .animal-card {
+                width: 100%;
+            }
+
+            .animal-card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            th, td {
+                padding: 9px;
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- 1. HTML FORMS -->
+
+    <section class="section">
+
+        <h2>HTML Forms</h2>
+
+        <form action="#" method="get">
+
+            <label for="fname">First Name:</label>
+
+            <input
+                type="text"
+                id="fname"
+                name="fname"
+                value="cristalisyia"
+            >
+
+            <label for="lname">Last Name:</label>
+
+            <input
+                type="text"
+                id="lname"
+                name="lname"
+                value="revaline"
+            >
+
+            <label for="instagram">Instagram:</label>
+
+            <input
+                type="text"
+                id="instagram"
+                name="instagram"
+                value="@azmilune_"
+            >
+
+            <h4>Favorite Programming Language</h4>
+
+            <div class="options">
+
+                <input type="radio" id="html"
+                    name="fav_language" value="HTML">
+                <label for="html">HTML</label>
+                <br>
+
+                <input type="radio" id="css"
+                    name="fav_language" value="CSS">
+                <label for="css">CSS</label>
+                <br>
+
+                <input type="radio" id="javascript"
+                    name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+                <br>
+
+                <input type="radio" id="cristalisyia"
+                    name="fav_language" value="Cristalisyia">
+                <label for="cristalisyia">Cristalisyia</label>
+
+            </div>
+
+            <h4>My Vehicles</h4>
+
+            <div class="options">
+
+                <input type="checkbox" id="vehicle1"
+                    name="vehicle1" value="Bike">
+                <label for="vehicle1">I have a bike</label>
+                <br>
+
+                <input type="checkbox" id="vehicle2"
+                    name="vehicle2" value="Car">
+                <label for="vehicle2">I have a car</label>
+                <br>
+
+                <input type="checkbox" id="vehicle3"
+                    name="vehicle3" value="Boat">
+                <label for="vehicle3">I have a boat</label>
+
+            </div>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <p>
+            If you click the Submit button, the form-data
+            will be sent using the GET method.
+        </p>
+
+    </section>
+
+
+    <!-- 2. COMPANY TABLE -->
+
+    <section class="section">
+
+        <h2>Company Data</h2>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- 3. TABEL DATA MAHASISWA -->
+
+    <section class="section">
+
+        <h2>Tabel Data Mahasiswa</h2>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nomor</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Nomor Telepon</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>WN20625004</td>
+                        <td>Azmi Azizah</td>
+                        <td>08214120198</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>WN20625002</td>
+                        <td>Anastasya</td>
+                        <td>085705158509</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>WN20625017</td>
+                        <td>Varadiba</td>
+                        <td>085188601947</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>WN20625012</td>
+                        <td>Nurdianti</td>
+                        <td>085340106610</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>WN20625014</td>
+                        <td>Risma Rawe</td>
+                        <td>085348294850</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>WN20625003</td>
+                        <td>Aurel</td>
+                        <td>081241898137</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>WN20625016</td>
+                        <td>Suci</td>
+                        <td>082293799716</td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>WN20625006</td>
+                        <td>Gilang</td>
+                        <td>085341281788</td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>WN20625013</td>
+                        <td>Raditha</td>
+                        <td>08134235826</td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>WN20625018</td>
+                        <td>Melda</td>
+                        <td>085385938408</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4. CSS FLOAT -->
+
+    <section class="section">
+
+        <h2>CSS Float</h2>
+
+        <div class="animals">
+
+
+            <!-- CAT CSS -->
+
+            <div class="animal-card cat">
+
+                <h2>CatCSS</h2>
+
+                <img
+                    src="cat.jpg.jpg"
+                    alt="Cat in a box"
+                >
+
+                <p>
+                    Nap all day cat dog hate mouse eat string barf pillow
+                    no baths hate everything but kitty poochy.
+                    Sleep on keyboard toy mouse squeak roll over.
+                    Mesmerizing birds. Poop on grasses, lick paws,
+                    destroy couch intently sniff hand.
+                </p>
+
+            </div>
+
+
+            <!-- DOG CSS -->
+
+            <div class="animal-card dog">
+
+                <h2>DogCSS</h2>
+
+                <img
+                    src="dog.jpg.jpeg"
+                    alt="Cute dog"
+                >
+
+                <p>
+                    Dogs love to play and run around.
+                    They enjoy going for walks and spending
+                    time with their owners. Dogs are loyal,
+                    friendly, and playful animals.
+                    Give them love, food, and care every day.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 5. FOOTER -->
+
+    <footer>
+
+        Copyright & copy; 2026 - HTML Forms & CSS Float
+
+    </footer>
+
+
+</div>
+
+</body>
+</html>
